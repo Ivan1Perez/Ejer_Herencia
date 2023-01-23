@@ -8,4 +8,9 @@ public class Actriz {
         this.actriz = actriz;
     }
 
+    @Override
+    public String toString(){
+        return actriz;
+    }
+
 }

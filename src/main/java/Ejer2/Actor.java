@@ -13,4 +13,9 @@ public class Actor{
     public String getActor() {
         return actor;
     }
+
+    @Override
+    public String toString(){
+        return actor;
+    }
 }
