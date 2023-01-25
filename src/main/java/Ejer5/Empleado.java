@@ -30,15 +30,14 @@ public abstract class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", DNI='" + DNI + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", antiguedad=" + antiguedad +
-                ", telefono=" + telefono +
-                ", salario=" + salario +
-                ", supervisor=" + supervisor +
-                '}';
+        return "Empleado{" + "\n" +
+                "- Nombre: " + nombre + "\n" +
+                "- Apellido: " + apellido + "\n" +
+                "- DNI: " + DNI + "\n" +
+                "- Direccion: " + direccion + "\n" +
+                "- Antiguedad: " + antiguedad + "\n" +
+                "- Telefono: " + telefono + "\n" +
+                "- Salario: " + String.format("%.2f",salario) + "€\n" +
+                "- Supervisor: " + supervisor + "\n";
     }
 }

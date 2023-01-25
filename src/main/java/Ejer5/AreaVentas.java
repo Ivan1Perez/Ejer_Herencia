@@ -13,8 +13,6 @@ public enum AreaVentas {
 
     @Override
     public String toString() {
-        return "AreaVentas{" +
-                "area='" + area + '\'' +
-                '}';
+        return area;
     }
 }

@@ -8,8 +8,7 @@ public class Vendedor extends Empleado{
     private int telefonoMovil;
     private AreaVentas areaVentas;
     private String[] listaClientes;
-    private float comisionVentas;
-//    private final double incremSalario = 0.10;
+    private final float comisionVentas = (float) 0.025;
 
     public Vendedor(String nombre, String apellido, String DNI, String direccion, int antiguedad, int telefono, float salario, int telefonoMovil) {
         super(nombre, apellido, DNI, direccion, antiguedad, telefono, salario);
@@ -35,15 +34,26 @@ public class Vendedor extends Empleado{
         listaClientes = aux;
     }
 
-//    public void darBaja(String cliente){
-//        boolean encontrado = false;
-//        int i = 0;
-//        while(i < listaClientes.length() && !encontrado){
-//            if(listaClientes[i].compareToIgnoreCase(cliente)==0)
-//                encontrado = true;
-//            else i++;
-//        }
-//    }
+    public void darBaja(String cliente){
+        boolean encontrado = false;
+        int i = 0, k = 0;
+        String[] aux = new String[listaClientes.length-1];
+        while(i < listaClientes.length && !encontrado){
+            if(listaClientes[i].compareToIgnoreCase(cliente)==0)
+                encontrado = true;
+            else i++;
+        }
+
+        if(encontrado){
+            for(int j = 0; j < listaClientes.length-1 ; j++,k++){
+                if(j==i){
+                    aux[j] = listaClientes[++k];
+                }else aux[j] = listaClientes[k];
+            }
+            listaClientes = aux;
+        }
+
+    }
 
     public void setCocheEmpresa(CocheEmpresa cocheEmpresa) {
         this.cocheEmpresa = cocheEmpresa;
@@ -53,6 +63,10 @@ public class Vendedor extends Empleado{
         this.areaVentas = areaVentas;
     }
 
+    public void comisionPorVenta(){
+        salario += salario*comisionVentas;
+    }
+
     public String[] getListaClientes() {
         return listaClientes;
     }
@@ -60,12 +74,19 @@ public class Vendedor extends Empleado{
     @Override
     public String toString() {
 
+        if(cocheEmpresa==null)
+            return super.toString() +
+                    "- Puesto: Vendedor" + "\n" +
+                    "- Coche de empresa: no disponible" + "\n" +
+                    "- Area de ventas: " + areaVentas + "\n" +
+                    "- Comisión de ventas: " + comisionVentas + "%\n" +
+                    "- Clientes: " + Arrays.toString(listaClientes);
+
         return super.toString() +
-                "cocheEmpresa=" + cocheEmpresa +
-                ", areaVentas=" + areaVentas +
-                ", comisionVentas=" + comisionVentas +
-                ", salario=" + salario + "\n" +
-                "Clientes: " + Arrays.toString(listaClientes) + "\n" +
-                "Puesto: Vendedor";
+                "- Puesto: Vendedor" + "\n" +
+                cocheEmpresa + "\n" +
+                "- Area de ventas: " + areaVentas + "\n" +
+                "- Comisión de ventas: " + comisionVentas + "%\n" +
+                "- Clientes: " + Arrays.toString(listaClientes);
     }
 }

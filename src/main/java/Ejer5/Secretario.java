@@ -19,9 +19,9 @@ public class Secretario extends Empleado{
 
     @Override
     public String toString() {
-        return "Secretario:\n" +
-                super.toString() + "\n" +
-                "Despacho: " + despacho + "\n" +
-                "Fax: " + fax;
+        return super.toString() +
+                "- Puesto: Secretario" + "\n" +
+                "- Despacho: " + despacho + "\n" +
+                "- Fax: " + fax;
     }
 }

@@ -7,11 +7,8 @@ public class JefeZona extends Empleado {
     private CocheEmpresa cocheEmpresa;
 //    private final double incremSalario = 0.20;
 
-    public JefeZona(String nombre, String apellido, String DNI, String direccion, int antiguedad, int telefono, float salario, Secretario secretarioACargo, String[] vendedoresACargo, CocheEmpresa cocheEmpresa) {
+    public JefeZona(String nombre, String apellido, String DNI, String direccion, int antiguedad, int telefono, float salario) {
         super(nombre, apellido, DNI, direccion, antiguedad, telefono, salario);
-        this.secretarioACargo = secretarioACargo;
-        this.vendedoresACargo = vendedoresACargo;
-        this.cocheEmpresa = cocheEmpresa;
     }
 
     public void setSecretarioACargo(Secretario secretarioACargo) {

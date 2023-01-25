@@ -14,7 +14,7 @@ public class CocheEmpresa {
 
     @Override
     public String toString() {
-        return "CocheEmpresa{" +
+        return "- Coche de empresa{" +
                 "matricula='" + matricula + '\'' +
                 ", marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
